@@ -26,11 +26,11 @@ export default function DesignJournal() {
   return (
     <section
       id="journal"
-      className="w-full bg-[#E9ECE5] px-4 py-20 sm:px-8 sm:py-28 lg:px-10"
+     className="w-full bg-[#E9ECE5] px-4 py-28 sm:px-8 sm:py-36 lg:px-10 lg:py-44"
     >
       <div className="mx-auto w-full max-w-[1600px]">
         {/* Heading */}
-        <div className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div className="mb-16 flex flex-col justify-between gap-8 sm:mb-20 sm:flex-row sm:items-end">
           <div>
             <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-[#A77B51]">
               Our Journal
@@ -54,11 +54,11 @@ export default function DesignJournal() {
         </div>
 
         {/* Article cards */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
           {articles.map((article) => (
             <article
               key={article.title}
-              className="group border border-[#DCD4C8] p-3 transition-colors duration-300 hover:border-[#A77B51] sm:p-4"
+              className="group border border-[#DCD4C8] p-3 transition-colors duration-300 hover:border-[#293D32] sm:p-4"
             >
               <div className="grid grid-cols-[52px_minmax(0,1fr)] gap-3 sm:grid-cols-[64px_minmax(0,1fr)] sm:gap-4">
                 {/* Date */}
@@ -78,7 +78,7 @@ export default function DesignJournal() {
                       src={article.image}
                       alt={article.title}
                       loading="lazy"
-                      className="h-48 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-56"
+                      className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-80 lg:h-96"
                     />
                   </div>
 

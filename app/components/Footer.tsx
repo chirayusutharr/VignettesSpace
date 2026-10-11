@@ -159,17 +159,15 @@ export default function Footer() {
 
                 {/* Bottom brand area */}
                 <div className="grid grid-cols-1 items-end gap-8 pt-8 sm:pt-10 md:grid-cols-[1.5fr_1fr]">
-
                     <a
                         href="#home"
                         aria-label="Vignettes home"
-                        className="block w-full min-w-0"
+                        className="block overflow-hidden"
                     >
-                        <span className="block whitespace-nowrap font-serif text-[clamp(2.5rem,10vw,9rem)] leading-none tracking-[0.22em] text-[#F8F7F3]">
-                            VIGNETTES
+                        <span className="block origin-left font-medium uppercase  text-[6vw] leading-[0.8] tracking-[0.22em] text-[#F8F7F3] sm:text-[8vw] lg:text-[7vw]">
+                         VIGNETTES
                         </span>
                     </a>
-
 
                     <div className="flex flex-col gap-6 pb-2 md:items-end">
                         <div>
