@@ -12,7 +12,7 @@ export default function ProductCard() {
       <div className="relative overflow-hidden rounded-[22px] bg-[#EFEEEC]">
         <div className="absolute left-3 top-3 z-10 flex gap-2">
           <span className="rounded-2xl bg-[#293D32] px-4 py-3 text-sm text-white">
-            − 50%
+            3,999/-
           </span>
           <span className="rounded-2xl bg-white/90 px-4 py-3 text-sm text-[#293D32]">
             Oak
@@ -20,7 +20,7 @@ export default function ProductCard() {
         </div>
 
         <img
-          src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTLf-uqShN1MfBm2_uBHfiYBmJ0obbu0jXQQwK4nxz2PoxzH93iV31Bo5hWdrE"
+          src="https://cdn.swadeshonline.com/v2/patient-paper-41f385/swad-p/wrkr/products/pictures/item/free/original/JtstbWTS4L-FannyFloorLamp.jpg"
           alt="Minimal wooden designer chair"
           className="h-[320px] w-full object-contain p-5 sm:h-[360px]"
         />
@@ -78,21 +78,7 @@ export default function ProductCard() {
       </div>
 
       {/* Product name and price */}
-      <div className="mt-4 flex items-end justify-between gap-3">
-        <div>
-          <p className="text-sm uppercase tracking-wide text-[#858779]">
-            TON
-          </p>
-          <h3 className="mt-1 text-xl font-semibold tracking-tight text-[#293D32] sm:text-2xl">
-            Merano Chair
-          </h3>
-        </div>
-
-        <div className="shrink-0 text-right">
-          <p className="text-sm text-[#929287] line-through">$399</p>
-          <p className="text-2xl font-medium text-[#293D32]">$199</p>
-        </div>
-      </div>
+      
     </article>
   );
 }

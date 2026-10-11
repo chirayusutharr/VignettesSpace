@@ -1,7 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero3D from "./components/Hero3D";
 import ProductCard from "./components/ProductCard";
-
+import DesignJournal from "./components/DesignJournal";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -44,12 +45,17 @@ export default function Home() {
             {/* Product card */}
             <div className="flex justify-center md:justify-end">
               <ProductCard />
+              
             </div>
+           
           </div>
+        
         </section>
+        <DesignJournal />
 
 
         {/* Keep your other sections here */}
+        <Footer />
       </main>
 
 
