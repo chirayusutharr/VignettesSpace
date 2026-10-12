@@ -39,7 +39,7 @@ export default function ProductSection() {
                     <div className="flex items-center gap-8 overflow-x-auto py-3 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         {/* Product Card 1 — fully visible */}
                         <div className="w-full max-w-[360px] shrink-0">
-                            <ProductCard productId={1} />
+                            <ProductCard productId={4} />
                         </div>
 
                         {/* Product Card 2 — partially visible */}
@@ -47,7 +47,7 @@ export default function ProductSection() {
                             <ProductCard productId={2} />
                         </div>
                         <div className="w-full max-w-[360px] shrink-0">
-                            <ProductCard productId={1} />
+                            <ProductCard productId={3} />
                         </div>
                         
                     </div>
