@@ -2,9 +2,16 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Footer() {
     const [email, setEmail] = useState("");
+
+    const [year, setYear] = useState<number | null>(null);
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
 
     return (
         <footer
@@ -165,7 +172,7 @@ export default function Footer() {
                         className="block overflow-hidden"
                     >
                         <span className="block origin-left font-medium uppercase  text-[6vw] leading-[0.8] tracking-[0.22em] text-[#F8F7F3] sm:text-[8vw] lg:text-[7vw]">
-                         VIGNETTES
+                            VIGNETTES
                         </span>
                     </a>
 
@@ -191,7 +198,7 @@ export default function Footer() {
                         </div>
 
                         <p className="text-xs text-[#999A90]">
-                            © {new Date().getFullYear()} Vignettes. All rights reserved.
+                           © {year ?? "2026"} Vignettes. All rights reserved.
                         </p>
                     </div>
                 </div>

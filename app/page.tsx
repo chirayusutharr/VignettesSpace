@@ -4,6 +4,7 @@ import ProductCard from "./components/ProductCard";
 import DesignJournal from "./components/DesignJournal";
 import Footer from "./components/Footer";
 
+
 export default function Home() {
   return (
     <>
