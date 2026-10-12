@@ -49,12 +49,7 @@ export default function ProductSection() {
                         <div className="w-full max-w-[360px] shrink-0">
                             <ProductCard productId={1} />
                         </div>
-                        <div className="w-full max-w-[360px] shrink-0">
-                            <ProductCard productId={1} />
-                        </div>
-                        <div className="w-full max-w-[360px] shrink-0">
-                            <ProductCard productId={1} />
-                        </div>
+                        
                     </div>
 
                     {/* Fade the second card toward the right edge */}

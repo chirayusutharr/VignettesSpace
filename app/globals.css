@@ -24,3 +24,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Shopping page: staggered entrance animation */
+@keyframes shopCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shop-card-enter {
+  opacity: 0;
+  animation: shopCardEnter 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .shop-card-enter {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}

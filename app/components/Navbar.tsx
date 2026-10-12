@@ -7,7 +7,7 @@ import { useState } from "react";
 const mainLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Services", href: "/services" },
-  { label: "Our Studio", href: "/about" },
+  { label: "Our Shop", href: "/shop" },
 ];
 
 const secondaryLinks = [
