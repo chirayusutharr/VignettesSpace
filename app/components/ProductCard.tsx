@@ -1,84 +1,111 @@
 
 "use client";
 
+import products from "../data/product.json";
 import { useState } from "react";
 
-export default function ProductCard() {
+type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  imageUrl: string;
+};
+
+type ProductCardProps = {
+  productId: number;
+};
+
+export default function ProductCard({ productId }: ProductCardProps) {
   const [liked, setLiked] = useState(false);
 
+  const product = products.find((item) => item.id === productId);
+  const whatsappNumber = "916367816145";
+
+  if (!product) return null;
+
+  const message = encodeURIComponent(
+    `Hi, I'm interested in ${product.name}.`
+  );
+
   return (
-    <article className="w-full max-w-[440px] rounded-[30px] bg-white p-4 shadow-[0_12px_40px_rgba(41,61,50,0.10)] sm:p-5">
-      {/* Product image and badges */}
-      <div className="relative overflow-hidden rounded-[22px] bg-[#EFEEEC]">
-        <div className="absolute left-3 top-3 z-10 flex gap-2">
-          <span className="rounded-2xl bg-[#293D32] px-4 py-3 text-sm text-white">
-            3,999/-
+    <article className="w-full overflow-hidden rounded-[30px] bg-white p-3 shadow-[0_12px_40px_rgba(41,61,50,0.10)] transition-shadow hover:shadow-[0_16px_48px_rgba(41,61,50,0.15)] sm:p-4">
+      {/* Product image */}
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] bg-[#EFEEEC]">
+        {/* Price and category */}
+        <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-2">
+          <span className="rounded-full bg-[#293D32] px-4 py-2.5 text-sm text-white">
+            ₹{product.price.toLocaleString("en-IN")}
           </span>
-          <span className="rounded-2xl bg-white/90 px-4 py-3 text-sm text-[#293D32]">
-            Oak
+
+          <span className="rounded-full bg-white/90 px-4 py-2.5 text-sm text-[#293D32]">
+            {product.category}
           </span>
         </div>
 
         <img
-          src="https://cdn.swadeshonline.com/v2/patient-paper-41f385/swad-p/wrkr/products/pictures/item/free/original/JtstbWTS4L-FannyFloorLamp.jpg"
-          alt="Minimal wooden designer chair"
-          className="h-[320px] w-full object-contain p-5 sm:h-[360px]"
+          src={product.imageUrl}
+          alt={product.name}
+          loading="lazy"
+          className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
         />
       </div>
 
-      {/* Dimensions, rating and actions */}
-      <div className="mt-3 grid grid-cols-[1.5fr_0.7fr_0.8fr_0.8fr] gap-2">
-        <div className="flex flex-col justify-center rounded-2xl bg-[#F5F4F1] px-3 py-3">
-          <span className="text-xs tracking-[0.2em] text-[#8A8A7F]">
-            W&nbsp;&nbsp; H&nbsp;&nbsp; D
-          </span>
-          <span className="mt-1 whitespace-nowrap text-sm font-medium text-[#293D32]">
-            58 × 79 × 60
-          </span>
+      {/* Product details and actions */}
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <h3 className="font-serif text-lg text-[#293D32]">
+            {product.name}
+          </h3>
+
+          <p className="mt-1 text-sm text-[#62675E]">
+            ₹{product.price.toLocaleString("en-IN")}
+          </p>
         </div>
 
-        <div className="flex flex-col items-center justify-center rounded-2xl bg-[#F5F4F1] p-2">
-          <span className="text-lg text-[#C69A45]">★</span>
-          <span className="text-sm font-medium text-[#293D32]">4.9</span>
+        <div className="flex shrink-0 items-center gap-2">
+          {/* Like button */}
+          <button
+            type="button"
+            onClick={() => setLiked((previous) => !previous)}
+            aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
+            aria-pressed={liked}
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F0EFED] transition hover:bg-[#E6E4DE]"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className={`h-6 w-6 ${liked
+                  ? "fill-[#A77B51] stroke-[#A77B51]"
+                  : "fill-none stroke-[#293D32]"
+                }`}
+              strokeWidth="1.7"
+            >
+              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" />
+            </svg>
+          </button>
+
+          {/* WhatsApp enquiry */}
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${message}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Enquire about ${product.name} on WhatsApp`}
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-[#293D32] text-white transition hover:bg-[#3B5547]"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-6 w-6 fill-none stroke-current"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7A8.5 8.5 0 1 1 20.5 11.5Z" />
+              <path d="M8.5 8.5c.5 2.5 2.5 4.5 5 5l1.2-1.2 2 1c-.2 1.3-1.2 2-2.5 2-3.5-.5-6.5-3.5-7-7 0-1.3.7-2.3 2-2.5l1 2-1.7 1.7Z" />
+            </svg>
+          </a>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setLiked(!liked)}
-          aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
-          aria-pressed={liked}
-          className="flex items-center justify-center rounded-2xl bg-[#F0EFED] transition hover:bg-[#E6E4DE]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className={`h-7 w-7 ${liked ? "fill-[#A77B51] stroke-[#A77B51]" : "fill-none stroke-[#293D32]"}`}
-            strokeWidth="1.7"
-          >
-            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" />
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          aria-label="View product"
-          onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-          className="flex items-center justify-center rounded-2xl bg-[#F0EFED] text-[#293D32] transition hover:bg-[#E6E4DE]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className="h-7 w-7 fill-none stroke-current"
-            strokeWidth="1.6"
-          >
-            <path d="M5 8h14l1 13H4L5 8Z" />
-            <path d="M9 8V6a3 3 0 0 1 6 0v2" />
-            <circle cx="9" cy="13" r=".7" fill="currentColor" />
-            <circle cx="15" cy="13" r=".7" fill="currentColor" />
-          </svg>
-        </button>
       </div>
-
-      {/* Product name and price */}
-      
     </article>
   );
 }

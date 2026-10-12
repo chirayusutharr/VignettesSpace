@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Vignettes Space",
   description: "Thoughtful pieces for timeless living",
+  
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

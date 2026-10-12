@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": 1,
+    "name": "Oak Lounge Chair",
+    "description": "A handcrafted oak chair for timeless interiors.",
+    "price": 24999,
+    "category": "Chair",
+    "imageUrl": "https://www.insaraf.com/cdn/shop/files/Dining_Chair_02_360x.jpg?v=1787208509"
+  },
+  {
+    "id": 2,
+    "name": "Oak Table",
+    "description": "A minimal Tea Table.",
+    "price": 2499,
+    "category": "Table",
+    "imageUrl": "https://www.furnitureinfashion.net/images/sablio-wooden-rectangular-dining-table-sapphire-oak1.jpg?v=1678821550"
+  }
+]
