@@ -4,7 +4,7 @@
     "id": 1,
     "name": "Oak Lounge Chair",
     "description": "A handcrafted oak chair for timeless interiors.",
-    "price": 24999,
+    "price": 4999,
     "category": "Chair",
     "imageUrl": "https://www.insaraf.com/cdn/shop/files/Dining_Chair_02_360x.jpg?v=1787208509"
   },
@@ -12,8 +12,40 @@
     "id": 2,
     "name": "Oak Table",
     "description": "A minimal Tea Table.",
-    "price": 2499,
+    "price": 6999,
     "category": "Table",
     "imageUrl": "https://www.furnitureinfashion.net/images/sablio-wooden-rectangular-dining-table-sapphire-oak1.jpg?v=1678821550"
+  },
+  {
+    "id": 3,
+    "name": " Minimal Teapoy",
+    "description": "A minimal Teapoy.",
+    "price": 6999,
+    "category": "Table",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQokAFlArcmxIe3MCU4SB4L_ezFpx52hXKkrNAuv4loR0bUA2D9gsAhZ_o5&s=10"
+  },
+  {
+    "id": 4,
+    "name": "Ola Chair",
+    "description": "crafted in south by Otium craftsman using modern technology and years of experience. Made from Imported Solid Teak Wood, post heat treatment for moisture control thus enhancing the life of Furniture. Multiple steps of polish giving mesmerizing finish: thus enhancing its aesthetic look.",
+    "price": 5999,
+    "category": "Chair",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVbBcyPhn-MTCh9QvWfAx1x34ivFlziuhc1qRrX_KJxE8tTvU8yI6nivup&s=10"
+  },
+  {
+    "id": 5,
+    "name": "Oak Cabinet",
+    "description": "Stellar Multipurpose Storage Cabinet (Medium Size, Oak)",
+    "price": 7490,
+    "category": "Cabinet",
+    "imageUrl": "https://cdn.swadeshonline.com/v2/patient-paper-41f385/swad-p/wrkr/products/pictures/item/free/original/jWlFinxvU8-CB006OK-01_1.jpg"
+  },
+   {
+    "id": 6,
+    "name": "Wood UtilityCabinet",
+    "description": "DCanape Omni 2 Engineering Wood Utility Unit Columbian Walnut Brent Wood Teak",
+    "price": 7490,
+    "category": "Cabinet",
+    "imageUrl": "https://cdn.swadeshonline.com/v2/patient-paper-41f385/swad-p/wrkr/products/pictures/item/free/original/u556IrJoSt-0.jpg"
   }
 ]
